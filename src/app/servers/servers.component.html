@@ -21,9 +21,8 @@
   </p>
 </ng-template>
 
-<app-server></app-server>
-<app-server></app-server> 
 
+<app-server *ngFor="let server of servers"></app-server>
 
 <input type="text" class="form-control" [(ngModel)]='userName'>
 
@@ -31,4 +30,11 @@
 
 <button class="btn btn-primary" [disabled]= "userName === ''" (click)='onCleanUserName()'> Add server </button>
 
+<hr>
+<label> Zadatak</label>
+<input type="text" class="form-control" [(ngModel)]='zapis'>
+<button class="btn btn-primary"   (click)='dodajZapis()'> Display details </button>
+
+<p *ngFor="let data of poljezapisa; let i = index"
+[ngStyle]="{backgroundColor: i > 4 ? 'blue' : 'red'}">{{data}}</p>
 

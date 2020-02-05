@@ -12,6 +12,10 @@ export class ServersComponent implements OnInit {
   serverName = 'TestServer';
   userName = '';
   serverCreated = false ;
+  servers = ['Prvi server', 'drugi server'];
+  zapis = '';
+  poljezapisa = [];
+
 
   constructor() {
     setTimeout(() => {
@@ -25,6 +29,7 @@ export class ServersComponent implements OnInit {
 
   onCreateServer() {
     this.serverCreated = true;
+    this.servers.push(this.serverName);
     this.serverrCreationStatus = 'Server je kreiran =  ' + this.serverName;
   }
 
@@ -34,6 +39,17 @@ export class ServersComponent implements OnInit {
 
   onCleanUserName() {
     this.userName = '';
+  }
+
+  dodajZapis() {
+
+    this.poljezapisa.push(this.zapis);
+    console.log(this.poljezapisa);
+  }
+
+  Broji() {
+      console.log(this.poljezapisa.length);
+    return this.poljezapisa.length;
   }
 
 }

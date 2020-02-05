@@ -13,10 +13,16 @@
 
 <p *ngIf=!serverCreated>{{serverrCreationStatus}}</p>
 
-<p *ngIf=serverCreated> Server je kreiran, server name is {{ serverName }}</p>
+<p *ngIf="serverCreated; else noServer"> Server je kreiran, server name is {{ serverName }}</p>
+
+<ng-template #noServer>
+  <p>
+      No server creted!
+  </p>
+</ng-template>
 
 <app-server></app-server>
-<!-- <app-server></app-server> --> 
+<app-server></app-server> 
 
 
 <input type="text" class="form-control" [(ngModel)]='userName'>

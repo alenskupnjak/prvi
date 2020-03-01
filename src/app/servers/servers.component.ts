@@ -49,7 +49,7 @@ export class ServersComponent implements OnInit {
 
   Broji() {
       console.log(this.poljezapisa.length);
-    return this.poljezapisa.length;
+      return this.poljezapisa.length;
   }
 
 }
